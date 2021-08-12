@@ -1,11 +1,12 @@
+import { deleteTask } from '../actions/domOperations.js';
 
 let taskList = document.getElementById('task-list');
 
 
-export const createTask = (task) => {
+export const createTaskDiv = (task) => {
 
     let taskDiv = document.createElement('div');
-    taskDiv.id = task.id;
+    taskDiv.id = task.taskId;
     taskDiv.classList.add('task');
 
     let isCompletedBox = document.createElement('input');
@@ -43,7 +44,7 @@ export const createTask = (task) => {
     let deleteBtn = document.createElement('i');
     deleteBtn.id = task.id;
     deleteBtn.classList.add('deleteBtn', 'fas', 'fa-trash');
-    // deleteBtn.addEventListener('click', deleteTask);
+    deleteBtn.addEventListener('click', deleteTask);
 
     taskData.value = task.data;
     taskLog.innerText = task.createdAt;
