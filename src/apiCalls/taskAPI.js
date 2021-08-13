@@ -1,6 +1,6 @@
 
-// const serverURL = 'https://todo-api-express.herokuapp.com/tasks'
-const serverURL = 'http://localhost:3000/tasks';
+const serverURL = 'https://todo-api-express.herokuapp.com/tasks'
+// const serverURL = 'http://localhost:3000/tasks';
 
 export const fetchAllTasks = async () => {
     try{
@@ -27,8 +27,7 @@ export const addTaskToServer = async (task) => {
     }
    
 }
-// returning a response
-// fetching same URL
+
 export const deleteTaskFromServer = async (taskId) => {
     try{
         let response = await fetch(`${serverURL}/${taskId}`, {
