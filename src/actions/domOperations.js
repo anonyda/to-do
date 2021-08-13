@@ -8,9 +8,12 @@ let taskInput = document.getElementById('task');
 
 export const getTasks = async () => {
     let tasks = await fetchAllTasks();
-    tasks.data.forEach((task) => {
-        createTaskDiv(task);
-    })
+    if(tasks.data != null){
+        tasks.data.forEach((task) => {
+            createTaskDiv(task);
+        })
+    }
+    
 }
 
 export const createNewTask = async (event) => {
