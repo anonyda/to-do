@@ -1,7 +1,7 @@
 import { createModal } from "../utils/addModal.js";
 
-// const serverURL = 'https://todo-api-express.herokuapp.com/tasks'
-const serverURL = 'http://localhost:4000/tasks';
+const serverURL = 'https://todo-api-express.herokuapp.com/tasks'
+// const serverURL = 'http://localhost:4000/tasks';
 
 export const fetchAllTasks = async () => {
     try{
