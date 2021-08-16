@@ -1,13 +1,14 @@
+import { createModal } from "../utils/addModal.js";
 
-const serverURL = 'https://todo-api-express.herokuapp.com/tasks'
-// const serverURL = 'http://localhost:3000/tasks';
+// const serverURL = 'https://todo-api-express.herokuapp.com/tasks'
+const serverURL = 'http://localhost:4000/tasks';
 
 export const fetchAllTasks = async () => {
     try{
         let response = await fetch(serverURL);
         return await response.json(); 
     }catch(error){
-        console.log(error);
+        createModal('Server is down. Please try again later.', error);
     }
     
 }
@@ -23,7 +24,7 @@ export const addTaskToServer = async (task) => {
         });
         return await response.json();
     }catch(error){
-        console.log(error);
+        createModal('Task could not be added since the server is down. Please try again later.', error);
     }
    
 }
@@ -38,7 +39,7 @@ export const deleteTaskFromServer = async (taskId) => {
         }
         return await response.json();
     }catch(error){
-        console.log(error);
+        createModal('Task could not be deleted since the server is down. Please try again later.', error);
     }
     
 }
@@ -55,7 +56,7 @@ export const updateTaskOnServer = async (taskId, task) => {
         });
         return await response.json();
     }catch(error){
-        console.log(error);
+        createModal('Task could not be updated since the server is down. Please try again later.', error);
     }
 }
 
